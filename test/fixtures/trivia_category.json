@@ -1,0 +1,12 @@
+{
+    "trivia_categories": [
+        {
+            "id": 9,
+            "name": "Test name"
+        },
+        {
+            "id": 10,
+            "name": "Test name"
+        }
+    ]
+}
