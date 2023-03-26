@@ -46,6 +46,10 @@ class QuestionsModel extends Equatable {
     required this.questions,
   });
 
+  Questions toQuestionsEntity() {
+    return Questions(questions: questions.map((e) => e.toEntity()).toList());
+  }
+
   @override
   List<Object?> get props => [questions];
 }
