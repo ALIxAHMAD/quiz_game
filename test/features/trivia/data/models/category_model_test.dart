@@ -7,8 +7,8 @@ import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
   const tCategoriesModel = CategoriesModel(categories: [
-    CategoryModel(id: 9, name: "Test name"),
-    CategoryModel(id: 10, name: "Test name"),
+    CategoryModel(id: 9, name: "Test Text"),
+    CategoryModel(id: 10, name: "Test Text"),
   ]);
 
   test("category model from json", () async {

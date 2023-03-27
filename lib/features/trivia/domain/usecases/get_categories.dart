@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:quiz_game/core/error/failures.dart';
-import 'package:quiz_game/features/trivia/domain/entities/category.dart';
-import 'package:quiz_game/features/trivia/domain/repositories/trivia_repository.dart';
+
+import '../../../../core/error/failures.dart';
+import '../entities/category.dart';
+import '../repositories/trivia_repository.dart';
 
 class GetCategories {
   final TriviaRepository repository;

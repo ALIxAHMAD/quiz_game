@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:quiz_game/core/enums/question_difficulty.dart';
 import 'package:quiz_game/core/error/failures.dart';
-import 'package:quiz_game/features/trivia/data/datasources/trivia_remote_data_source.mocks.dart';
+import 'package:quiz_game/features/trivia/data/datasources/remote/trivia_remote_data_source.mocks.dart';
 import 'package:quiz_game/features/trivia/data/models/category_model.dart';
 import 'package:quiz_game/features/trivia/data/models/question_model.dart';
 import 'package:quiz_game/features/trivia/data/repositories/trivia_repository_impl.dart';

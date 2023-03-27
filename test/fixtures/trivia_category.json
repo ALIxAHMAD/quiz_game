@@ -1,12 +1,13 @@
 {
+    "response_code": 0,
     "trivia_categories": [
         {
             "id": 9,
-            "name": "Test name"
+            "name": "Test Text"
         },
         {
             "id": 10,
-            "name": "Test name"
+            "name": "Test Text"
         }
     ]
 }

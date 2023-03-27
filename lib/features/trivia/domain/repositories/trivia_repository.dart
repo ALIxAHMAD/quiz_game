@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:quiz_game/core/enums/question_difficulty.dart';
-import 'package:quiz_game/core/error/failures.dart';
-import 'package:quiz_game/features/trivia/domain/entities/category.dart';
-import 'package:quiz_game/features/trivia/domain/entities/question.dart';
+import '../../../../core/enums/question_difficulty.dart';
+import '../../../../core/error/failures.dart';
+import '../entities/category.dart';
+import '../entities/question.dart';
 import 'package:mockito/annotations.dart';
 
 @GenerateNiceMocks([MockSpec<TriviaRepository>(as: #MockTriviaRepository)])
