@@ -4,29 +4,21 @@ This is a simple flutter quiz game
 
 
 ## ToDo:
-- [ ] Domain layer
-  - [ ] entities
-      - [ ] category
-      - [ ] question
-   - [ ] Repository
-      - [ ] trivia
-  - [ ] Use cases
+- [X] Domain layer
+  - [X] entities
+      - [X] category
+      - [X] question
+   - [X] Repository
+      - [X] trivia
+  - [X] Use cases
       - get categories
       - get questions
-- [ ] Data layer
-  - [ ] Repository
-      - [ ] trivia repository implementation
-  - [ ] Models
-      - [ ] category
-      - [ ] question
-  - [ ] Data source
-      - [ ] trivia remote data source
+- [X] Data layer
+  - [X] Repository
+      - [X] trivia repository implementation
+  - [X] Models
+      - [X] category
+      - [X] question
+  - [X] Data source
+      - [X] trivia remote data source
 - [ ] Presentation layer
-  - [ ] Cubit
-      - [ ] trivia state
-      - [ ] trivia cubit
-  - [ ] Pages
-      - [ ] settings
-      - [ ] home page
-      - [ ] trivia
-      - [ ] summary
