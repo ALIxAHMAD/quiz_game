@@ -16,7 +16,6 @@ class HomeCubit extends Cubit<HomeState> {
         super(HomeState.init());
 
   void init() async {
-    print("sasd");
     emit(state.copyWith(isLoading: true, errorMessage: ""));
     final result = await getCategories();
     result.fold((l) {
@@ -31,12 +30,15 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void amountOnChange(String amount) {
+    emit(state.copyWith(amount: amount));
+  }
+
+  int amountInt() {
     try {
-      final amountInt = int.parse(amount);
-      emit(state.copyWith(amount: amountInt));
+      final amountInt = int.parse(state.amount);
+      return amountInt;
     } catch (_) {
-      emit(state.copyWith(errorMessage: "Invalid amount input"));
-      return;
+      return 10;
     }
   }
 }

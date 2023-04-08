@@ -5,7 +5,7 @@ class HomeState extends Equatable {
   final Categories categories;
   final Category chosenCategory;
   final String errorMessage;
-  final int amount;
+  final String amount;
   final bool isLoading;
   const HomeState({
     required this.categories,
@@ -22,7 +22,7 @@ class HomeState extends Equatable {
       categories: Categories(categories: []),
       chosenCategory: Category(id: 10, name: "empty"),
       errorMessage: "",
-      amount: 1,
+      amount: "",
       isLoading: false,
     );
   }
@@ -31,7 +31,7 @@ class HomeState extends Equatable {
     Categories? categories,
     Category? chosenCategory,
     String? errorMessage,
-    int? amount,
+    String? amount,
     bool? isLoading,
   }) {
     return HomeState(

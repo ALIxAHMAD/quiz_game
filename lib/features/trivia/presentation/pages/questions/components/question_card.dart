@@ -22,25 +22,27 @@ class QuestionCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
       ),
-      child: Column(
-        children: [
-          // Question Text
-          Text(
-            question.questionText,
-            style: Theme.of(context)
-                .textTheme
-                .headline6
-                ?.copyWith(color: kBlackColor),
-          ),
-          // Answers
-          ...List.generate(
-            question.answers.length,
-            (index) => Answer(
-              text: question.answers[index],
-              index: index,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Question Text
+            Text(
+              question.questionText,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: kBlackColor),
             ),
-          )
-        ],
+            // Answers
+            ...List.generate(
+              question.answers.length,
+              (index) => Answer(
+                text: question.answers[index],
+                index: index,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -2,7 +2,7 @@
 import 'dart:math';
 
 import 'package:equatable/equatable.dart';
-
+import 'package:quiz_game/core/util/helper/parse_html_string.dart';
 import '../../domain/entities/question.dart';
 
 class QuestionModel extends Equatable {
@@ -31,12 +31,11 @@ class QuestionModel extends Equatable {
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) {
     return QuestionModel(
-      questionsText: json["question"],
-      inCorrectAnswers: (json["incorrect_answers"] as List)
-          .map((answer) => answer.toString())
-          .toList(),
-      correctAnswer: json["correct_answer"],
-    );
+        questionsText: parseHtmlString(json["question"]),
+        inCorrectAnswers: (json["incorrect_answers"] as List)
+            .map((answer) => parseHtmlString(answer.toString()))
+            .toList(),
+        correctAnswer: parseHtmlString(json["correct_answer"]));
   }
 }
 

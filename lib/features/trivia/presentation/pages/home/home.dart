@@ -7,8 +7,8 @@ import 'package:quiz_game/features/trivia/domain/repositories/trivia_repository.
 import 'package:quiz_game/features/trivia/presentation/cubit/home/home_cubit.dart';
 import 'package:quiz_game/features/trivia/presentation/pages/home/components/choseCategoryDialog.dart';
 
-import '../../widgets/error_screen.dart';
-import '../../widgets/loading_screen.dart';
+import '../../../../../core/util/widgets/error_screen.dart';
+import '../../../../../core/util/widgets/loading_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           bloc: cubit,
           builder: (context, state) {
             if (state.isLoading) {
-              return LoadingScreen();
+              return const LoadingScreen();
             }
             if (state.errorMessage != "") {
               return ErrorScreen(
@@ -125,12 +125,20 @@ class _HomePageState extends State<HomePage> {
                       child: OutlinedButton(
                         onPressed: () {
                           state.chosenCategory.name == "empty"
-                              ? null
-                              : AutoRouter.of(context).replaceAll([
-                                  QuestionsRoute(
+                              ? ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    behavior: SnackBarBehavior.floating,
+                                    content: Text("Please select a category"),
+                                  ),
+                                )
+                              : AutoRouter.of(context).replaceAll(
+                                  [
+                                    QuestionsRoute(
                                       categoryId: state.chosenCategory.id,
-                                      amount: state.amount)
-                                ]);
+                                      amount: cubit.amountInt(),
+                                    )
+                                  ],
+                                );
                         },
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all(
