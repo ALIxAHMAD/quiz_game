@@ -21,4 +21,7 @@ This is a simple flutter quiz game
       - [X] question
   - [X] Data source
       - [X] trivia remote data source
-- [ ] Presentation layer
+- [X] Presentation layer
+      - [X] home page
+      - [X] questions page
+      - [X] scores page

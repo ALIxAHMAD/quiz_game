@@ -21,7 +21,7 @@ void main() {
       when(dio.get(any)).thenAnswer(
         (_) async => Response(
           requestOptions: RequestOptions(),
-          data: fixture("trivia_category.json"),
+          data: fixtureMap("trivia_category.json"),
           statusCode: 200,
         ),
       );
@@ -45,23 +45,6 @@ void main() {
         throwsA(
           const ServerException(
               "Something went wrong, check your internet connection"),
-        ),
-      );
-    });
-    test("should throw exception when the response code is not 0", () async {
-      // arrange
-      when(dio.get(any)).thenAnswer((_) async => Response(
-            requestOptions: RequestOptions(),
-            data: fixture("trivia_category_error.json"),
-            statusCode: 200,
-          ));
-      // act
-      final call = dataSource.loadCategories;
-      // assert
-      expect(
-        () => call(),
-        throwsA(
-          const ServerException("Something went wrong, try again later"),
         ),
       );
     });

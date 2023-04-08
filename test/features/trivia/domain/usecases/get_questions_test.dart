@@ -11,16 +11,16 @@ void main() {
   late MockTriviaRepository mockTriviaRepository;
   setUp(() {
     mockTriviaRepository = MockTriviaRepository();
-    useCase = GetQuestions(repository: mockTriviaRepository);
+    useCase = GetQuestions(mockTriviaRepository);
   });
-  final tQuestions = Questions(questions: []);
+  const tQuestions = Questions(questions: []);
   const tAmount = 10;
   const tQuestionDifficulty = QuestionDifficulty.medium;
   const tCategory = 10;
   test("GetQuestions use case test", () async {
     // arrange
     when(mockTriviaRepository.getQuestions(any, any, any))
-        .thenAnswer((_) async => Right(tQuestions));
+        .thenAnswer((_) async => const Right(tQuestions));
     // act
     final result = await useCase(tAmount, tQuestionDifficulty, tCategory);
     // assert
@@ -29,6 +29,6 @@ void main() {
       tQuestionDifficulty,
       tCategory,
     ));
-    expect(result, Right(tQuestions));
+    expect(result, const Right(tQuestions));
   });
 }

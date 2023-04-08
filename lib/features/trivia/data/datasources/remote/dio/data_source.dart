@@ -48,11 +48,10 @@ class DioDataSource implements TriviaRemoteDataSource {
       throw const ServerException(
           "Something went wrong, check your internet connection");
     }
-    final jsonBody = json.decode(response.data);
-    if (responseCode(jsonBody) != 0) {
+    if (responseCode(response.data) != 0) {
       throw const ServerException("Something went wrong, try again later");
     }
-    final result = (jsonBody['results'] as List).map(
+    final result = (response.data['results'] as List).map(
       (e) => QuestionModel.fromJson(e),
     );
     return QuestionsModel(questions: [...result]);
@@ -65,13 +64,9 @@ class DioDataSource implements TriviaRemoteDataSource {
       throw const ServerException(
           "Something went wrong, check your internet connection");
     }
-    final jsonBody = json.decode(response.data);
-    if (responseCode(jsonBody) != 0) {
-      throw const ServerException("Something went wrong, try again later");
-    }
 
-    final result =
-        (jsonBody["trivia_categories"]).map((e) => CategoryModel.fromJson(e));
+    final result = (response.data["trivia_categories"])
+        .map((e) => CategoryModel.fromJson(e));
     return CategoriesModel(categories: [...result]);
   }
 }

@@ -8,9 +8,9 @@ import '../entities/question.dart';
 
 class GetQuestions {
   final TriviaRepository repository;
-  GetQuestions({
-    required this.repository,
-  });
+  GetQuestions(
+    this.repository,
+  );
   Future<Either<Failure, Questions>> call(
     int amount,
     QuestionDifficulty difficulty,
