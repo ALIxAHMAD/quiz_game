@@ -87,6 +87,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                     // Question card
                     Expanded(
                       child: PageView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: state.questions.questions.length,
                         controller: pageController,
                         itemBuilder: (context, index) {
