@@ -42,12 +42,6 @@ class _QuestionsPageState extends State<QuestionsPage> {
   }
 
   @override
-  void dispose() {
-    cubit.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => cubit,

@@ -25,3 +25,12 @@ This is a simple flutter quiz game
       - [X] home page
       - [X] questions page
       - [X] scores page
+
+## Screenshots
+<table>
+  <tr>
+    <td><img src="assets/screenshots/screen1.png" width=318  height=552></td>
+    <td><img src="assets/screenshots/screen2.png" width=318  height=552></td>
+    <td><img src="assets/screenshots/screen3.png" width=318  height=552></td>
+  </tr>
+ </table>
