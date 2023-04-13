@@ -13,9 +13,9 @@ class QuestionsCubit extends Cubit<QuestionsState> {
       : getQuestions = GetQuestions(repository),
         super(QuestionsState.init());
 
-  void init(int id, int amount) async {
+  void init(int id, int amount, QuestionDifficulty difficulty) async {
     emit(state.copyWith(isLoading: true));
-    final result = await getQuestions(amount, QuestionDifficulty.medium, id);
+    final result = await getQuestions(amount, difficulty, id);
     result.fold((l) {
       emit(state.copyWith(errorMessage: l.message, isLoading: false));
     }, (r) {

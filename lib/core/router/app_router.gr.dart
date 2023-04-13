@@ -18,6 +18,7 @@ import '../../features/trivia/presentation/pages/home/home.dart' as _i1;
 import '../../features/trivia/presentation/pages/questions/questions.dart'
     as _i2;
 import '../../features/trivia/presentation/pages/score/score.dart' as _i3;
+import '../enums/question_difficulty.dart' as _i6;
 
 class AppRouter extends _i4.RootStackRouter {
   AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
@@ -42,6 +43,7 @@ class AppRouter extends _i4.RootStackRouter {
           key: args.key,
           categoryId: args.categoryId,
           amount: args.amount,
+          difficulty: args.difficulty,
         ),
         transitionsBuilder: _i4.TransitionsBuilders.noTransition,
         opaque: true,
@@ -100,6 +102,7 @@ class QuestionsRoute extends _i4.PageRouteInfo<QuestionsRouteArgs> {
     _i5.Key? key,
     required int categoryId,
     required int amount,
+    required _i6.QuestionDifficulty difficulty,
   }) : super(
           QuestionsRoute.name,
           path: '/questions-page',
@@ -107,6 +110,7 @@ class QuestionsRoute extends _i4.PageRouteInfo<QuestionsRouteArgs> {
             key: key,
             categoryId: categoryId,
             amount: amount,
+            difficulty: difficulty,
           ),
         );
 
@@ -118,6 +122,7 @@ class QuestionsRouteArgs {
     this.key,
     required this.categoryId,
     required this.amount,
+    required this.difficulty,
   });
 
   final _i5.Key? key;
@@ -126,9 +131,11 @@ class QuestionsRouteArgs {
 
   final int amount;
 
+  final _i6.QuestionDifficulty difficulty;
+
   @override
   String toString() {
-    return 'QuestionsRouteArgs{key: $key, categoryId: $categoryId, amount: $amount}';
+    return 'QuestionsRouteArgs{key: $key, categoryId: $categoryId, amount: $amount, difficulty: $difficulty}';
   }
 }
 

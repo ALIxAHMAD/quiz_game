@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/constants/constants.dart';
 import '../../../../core/router/app_router.gr.dart';
@@ -20,9 +21,10 @@ class ErrorScreen extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
+          SvgPicture.asset("assets/page/pg.svg", fit: BoxFit.fill),
           Column(
             children: [
-              Spacer(flex: 3),
+              const Spacer(flex: 3),
               Text(
                 "Ops!",
                 style: Theme.of(context)
@@ -30,7 +32,7 @@ class ErrorScreen extends StatelessWidget {
                     .headline3
                     ?.copyWith(color: kSecondaryColor),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -41,35 +43,43 @@ class ErrorScreen extends StatelessWidget {
                       ?.copyWith(color: kSecondaryColor),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               OutlinedButton(
                 onPressed: () {
                   errorCallback();
                 },
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0))),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  primary: Colors.greenAccent.withOpacity(0.8),
+                  onPrimary: kWhiteColor,
+                  elevation: 8,
+                  shadowColor: Colors.greenAccent.withOpacity(0.5),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Text(
                       "Ok",
-                      style:
-                          TextStyle(color: Theme.of(context).primaryColorLight),
+                      style: TextStyle(color: kWhiteColor),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 10,
                     ),
                     Icon(
                       Icons.arrow_right_alt,
-                      color: Theme.of(context).primaryColorLight,
+                      color: kWhiteColor,
                     )
                   ],
                 ),
               ),
-              Spacer(flex: 3),
+              const Spacer(flex: 3),
             ],
           )
         ],

@@ -15,7 +15,7 @@ void main() {
     dio = MockDio();
     dataSource = DioDataSource(client: dio);
   });
-  group("load trivia categories", () {
+  group("get trivia categories", () {
     test("should perform a GET request to the api", () async {
       // arrange
       when(dio.get(any)).thenAnswer(
@@ -26,7 +26,7 @@ void main() {
         ),
       );
       // act
-      dataSource.loadCategories();
+      dataSource.getCategories();
       // assert
       verify(dio.get("https://opentdb.com/api_category.php"));
     });
@@ -38,7 +38,7 @@ void main() {
             statusCode: 404,
           ));
       // act
-      final call = dataSource.loadCategories;
+      final call = dataSource.getCategories;
       // assert
       expect(
         () => call(),
@@ -59,7 +59,7 @@ void main() {
           .thenAnswer(
         (_) async => Response(
           requestOptions: RequestOptions(),
-          data: fixture("trivia.json"),
+          data: fixtureMap("trivia.json"),
           statusCode: 200,
         ),
       );
@@ -102,7 +102,7 @@ void main() {
       when(dio.get(any, queryParameters: anyNamed("queryParameters")))
           .thenAnswer((_) async => Response(
                 requestOptions: RequestOptions(),
-                data: fixture("trivia_error.json"),
+                data: fixtureMap("trivia_error.json"),
                 statusCode: 200,
               ));
       // act

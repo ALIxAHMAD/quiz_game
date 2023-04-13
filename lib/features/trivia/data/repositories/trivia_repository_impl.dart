@@ -16,7 +16,7 @@ class TriviaRepositoryImpl implements TriviaRepository {
   @override
   Future<Either<Failure, Categories>> getCategories() async {
     try {
-      final result = await remoteDataSource.loadCategories();
+      final result = await remoteDataSource.getCategories();
       return Right(result.toCategoriesEntity());
     } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));

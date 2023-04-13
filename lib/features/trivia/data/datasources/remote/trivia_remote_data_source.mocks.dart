@@ -53,7 +53,7 @@ class _FakeQuestionsModel_1 extends _i1.SmartFake
 class MockTriviaRemoteDataSource extends _i1.Mock
     implements _i4.TriviaRemoteDataSource {
   @override
-  _i5.Future<_i2.CategoriesModel> loadCategories() => (super.noSuchMethod(
+  _i5.Future<_i2.CategoriesModel> getCategories() => (super.noSuchMethod(
         Invocation.method(
           #loadCategories,
           [],

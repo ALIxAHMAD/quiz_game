@@ -2,6 +2,19 @@
 
 This is a simple flutter quiz game
 
+- Written with clean code, clean architecture and Test Driven Development
+- In this game you can chose your desired trivia category , questions difficulty and amount of questions
+- This app contact with [opentdb](https://opentdb.com) to retrieve questions and categories data
+- beautiful and easy to use user interface
+
+## Screenshots
+<table>
+  <tr>
+    <td><img src="assets/screenshots/screen1.png" width=318  height=552></td>
+    <td><img src="assets/screenshots/screen2.png" width=318  height=552></td>
+    <td><img src="assets/screenshots/screen3.png" width=318  height=552></td>
+  </tr>
+ </table>
 
 ## ToDo:
 - [X] Domain layer
@@ -26,11 +39,3 @@ This is a simple flutter quiz game
   - [X] questions page
   - [X] scores page
 
-## Screenshots
-<table>
-  <tr>
-    <td><img src="assets/screenshots/screen1.png" width=318  height=552></td>
-    <td><img src="assets/screenshots/screen2.png" width=318  height=552></td>
-    <td><img src="assets/screenshots/screen3.png" width=318  height=552></td>
-  </tr>
- </table>

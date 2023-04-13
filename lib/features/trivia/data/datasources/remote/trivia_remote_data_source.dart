@@ -7,7 +7,7 @@ import 'package:mockito/annotations.dart';
 @GenerateNiceMocks(
     [MockSpec<TriviaRemoteDataSource>(as: #MockTriviaRemoteDataSource)])
 abstract class TriviaRemoteDataSource {
-  Future<CategoriesModel> loadCategories();
+  Future<CategoriesModel> getCategories();
   Future<QuestionsModel> getQuestions(
     int amount,
     QuestionDifficulty difficulty,

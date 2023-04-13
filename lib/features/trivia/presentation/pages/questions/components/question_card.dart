@@ -11,37 +11,41 @@ class QuestionCard extends StatelessWidget {
     Key? key,
     required this.question,
   }) : super(key: key);
+
   final Question question;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
+    return Card(
+      color: kWhiteColor,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Question Text
-            Text(
-              question.questionText,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: kBlackColor),
-            ),
-            // Answers
-            ...List.generate(
-              question.answers.length,
-              (index) => Answer(
-                text: question.answers[index],
-                index: index,
+      elevation: 4,
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                question.questionText,
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: kBlackColor,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
-            )
-          ],
+              const SizedBox(height: 16),
+              ...List.generate(
+                question.answers.length,
+                (index) => Answer(
+                  text: question.answers[index],
+                  index: index,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

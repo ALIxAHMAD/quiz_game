@@ -23,24 +23,24 @@ void main() {
         "should return remote data when the call to remote data source successful",
         () async {
       // arrange
-      when(remoteDataSource.loadCategories())
+      when(remoteDataSource.getCategories())
           .thenAnswer((_) async => tCategoriesModel);
       // act
       final result = await repositoryImpl.getCategories();
       // assert
-      verify(remoteDataSource.loadCategories());
+      verify(remoteDataSource.getCategories());
       expect(result, Right(tCategories));
     });
     test(
         "should return failure when the call to remote data source unsuccessful",
         () async {
       // arrange
-      when(remoteDataSource.loadCategories()).thenThrow(
+      when(remoteDataSource.getCategories()).thenThrow(
           Exception("Something went wrong, check internet connection"));
       // act
       final result = await repositoryImpl.getCategories();
       // assert
-      verify(remoteDataSource.loadCategories());
+      verify(remoteDataSource.getCategories());
       expect(
           result,
           equals(const Left(ServerFailure(

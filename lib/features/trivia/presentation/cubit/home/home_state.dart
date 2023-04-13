@@ -7,24 +7,27 @@ class HomeState extends Equatable {
   final String errorMessage;
   final String amount;
   final bool isLoading;
+  final QuestionDifficulty difficulty;
   const HomeState({
     required this.categories,
     required this.chosenCategory,
     required this.errorMessage,
     required this.amount,
     required this.isLoading,
+    required this.difficulty,
   });
   @override
-  List<Object?> get props => [categories, chosenCategory, errorMessage, amount];
+  List<Object?> get props =>
+      [categories, chosenCategory, errorMessage, amount, difficulty];
 
   factory HomeState.init() {
     return const HomeState(
-      categories: Categories(categories: []),
-      chosenCategory: Category(id: 10, name: "empty"),
-      errorMessage: "",
-      amount: "",
-      isLoading: false,
-    );
+        categories: Categories(categories: []),
+        chosenCategory: Category(id: 10, name: "empty"),
+        errorMessage: "",
+        amount: "",
+        isLoading: false,
+        difficulty: QuestionDifficulty.medium);
   }
 
   HomeState copyWith({
@@ -33,6 +36,7 @@ class HomeState extends Equatable {
     String? errorMessage,
     String? amount,
     bool? isLoading,
+    QuestionDifficulty? difficulty,
   }) {
     return HomeState(
       categories: categories ?? this.categories,
@@ -40,6 +44,7 @@ class HomeState extends Equatable {
       errorMessage: errorMessage ?? this.errorMessage,
       amount: amount ?? this.amount,
       isLoading: isLoading ?? this.isLoading,
+      difficulty: difficulty ?? this.difficulty,
     );
   }
 }

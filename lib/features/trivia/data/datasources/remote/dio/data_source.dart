@@ -58,7 +58,7 @@ class DioDataSource implements TriviaRemoteDataSource {
   }
 
   @override
-  Future<CategoriesModel> loadCategories() async {
+  Future<CategoriesModel> getCategories() async {
     final response = await client.get("https://opentdb.com/api_category.php");
     if (response.statusCode != 200) {
       throw const ServerException(

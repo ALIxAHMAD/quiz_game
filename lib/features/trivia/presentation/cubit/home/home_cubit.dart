@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:quiz_game/core/enums/question_difficulty.dart';
 import 'package:quiz_game/features/trivia/domain/entities/category.dart';
 import 'package:quiz_game/features/trivia/domain/repositories/trivia_repository.dart';
 import 'package:quiz_game/features/trivia/domain/usecases/get_categories.dart';
@@ -29,6 +30,10 @@ class HomeCubit extends Cubit<HomeState> {
     emit(state.copyWith(chosenCategory: category));
   }
 
+  void choseDifficulty(QuestionDifficulty difficulty) {
+    emit(state.copyWith(difficulty: difficulty));
+  }
+
   void amountOnChange(String amount) {
     emit(state.copyWith(amount: amount));
   }
@@ -36,6 +41,9 @@ class HomeCubit extends Cubit<HomeState> {
   int amountInt() {
     try {
       final amountInt = int.parse(state.amount);
+      if (amountInt == 1 || amountInt == 0) {
+        return 10;
+      }
       return amountInt;
     } catch (_) {
       return 10;
