@@ -5,7 +5,7 @@ This is a simple flutter quiz game
 - Written with clean code, clean architecture and Test Driven Development
 - In this game you can chose your desired trivia category , questions difficulty and amount of questions
 - This app contact with [opentdb](https://opentdb.com) to retrieve questions and categories data
-- beautiful and easy to use user interface
+- Beautiful and easy to use user interface
 
 ## Screenshots
 <table>
@@ -24,8 +24,8 @@ This is a simple flutter quiz game
    - [X] Repository
       - [X] trivia
   - [X] Use cases
-      - get categories
-      - get questions
+      - [X] get categories
+      - [X] get questions
 - [X] Data layer
   - [X] Repository
       - [X] trivia repository implementation
