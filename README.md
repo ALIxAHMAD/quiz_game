@@ -4,7 +4,7 @@ This is a simple flutter quiz game
 
 - Written with clean code, clean architecture and Test Driven Development
 - In this game you can chose your desired trivia category , questions difficulty and amount of questions
-- This app contact with [opentdb](https://opentdb.com) to retrieve questions and categories data
+- This app contact with [opentdb](https://opentdb.com) to retrieve questions and categories data using Dio http client
 - Beautiful and easy to use user interface
 
 ## Screenshots
