@@ -1,11 +1,22 @@
-# quiz_game
+# Quiz Game 🎯
 
-This is a simple flutter quiz game
+A Flutter quiz game with **Clean Architecture**, **Test-Driven Development (TDD)**, and a **beautiful, easy-to-use UI**.  
+Players can choose their trivia **category**, **difficulty**, and **number of questions**.  
 
-- Written with clean code, clean architecture and Test Driven Development
-- In this game you can chose your desired trivia category , questions difficulty and amount of questions
-- This app contact with [opentdb](https://opentdb.com) to retrieve questions and categories data using Dio http client
-- Beautiful and easy to use user interface
+The app fetches live trivia questions & categories from [OpenTDB](https://opentdb.com/) using the **Dio HTTP client**.
+
+---
+
+## Features
+- Choose from multiple **trivia categories**  
+- Select question **difficulty levels** (easy / medium / hard)  
+- Set custom **number of questions** per game  
+- Live data from OpenTDB API  
+- **Score tracking** at the end of each game  
+- **Clean Architecture** & **TDD**  
+- Simple, responsive UI with smooth navigation
+
+---
 
 ## Screenshots
 <table>
@@ -16,26 +27,30 @@ This is a simple flutter quiz game
   </tr>
  </table>
 
-## ToDo:
-- [X] Domain layer
-  - [X] entities
-      - [X] category
-      - [X] question
-   - [X] Repository
-      - [X] trivia
-  - [X] Use cases
-      - [X] get categories
-      - [X] get questions
-- [X] Data layer
-  - [X] Repository
-      - [X] trivia repository implementation
-  - [X] Models
-      - [X] category
-      - [X] question
-  - [X] Data source
-      - [X] trivia remote data source
-- [X] Presentation layer
-  - [X] home page
-  - [X] questions page
-  - [X] scores page
+---
+
+## Tech Stack
+- **Flutter** (cross-platform)  
+- **Cubit** for state management  
+- **Dio** for HTTP client  
+- **Clean Architecture** (Domain / Data / Presentation layers)  
+- **Test-Driven Development**   
+
+---
+
+## Architecture Overview
+**Domain Layer**  
+- Entities: `Category`, `Question`  
+- Repository: `TriviaRepository`  
+- Use Cases: `GetCategories`, `GetQuestions`  
+
+**Data Layer**  
+- Repository Implementation: `TriviaRepositoryImpl`  
+- Models: `CategoryModel`, `QuestionModel`  
+- Data Source: `TriviaRemoteDataSource`  
+
+**Presentation Layer**  
+- Pages: `HomePage`, `QuestionsPage`, `ScoresPage`  
+
+---
 
