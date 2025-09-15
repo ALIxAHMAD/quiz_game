@@ -14,7 +14,7 @@ The app fetches live trivia questions & categories from [OpenTDB](https://opentd
 - Live data from OpenTDB API  
 - **Score tracking** at the end of each game  
 - **Clean Architecture** & **TDD**  
-- Simple, responsive UI with smooth navigation
+- Simple UI with smooth navigation
 
 ---
 
